@@ -13,7 +13,7 @@ import {IFeeCalculationStrategy} from "../interfaces/IFeeCalculationStrategy.sol
 contract MultiHookAdapterFactory {
     
     /// @notice Event emitted when a new MultiHookAdapter is deployed
-    /// @param adapter The address of the deployed adapter
+    /// @param adapter The address of the deployed -adapter
     /// @param poolManager The pool manager address
     /// @param defaultFee The default fee for the adapter
     /// @param deployer The address that deployed the adapter

@@ -101,7 +101,7 @@ contract AdapterDeploymentHelper {
         // PermissionedMultiHookAdapter(adapter).batchApproveHooks(hooks) as the hook manager
     }
     
-    /// @notice Deploy adapter with specific hook permissions
+    /// @notice Deploy adapter with specific hook --permissions
     /// @param poolManager The Uniswap V4 pool manager
     /// @param defaultFee The default fee in basis points
     /// @param requiredPermissions The hook permissions required
