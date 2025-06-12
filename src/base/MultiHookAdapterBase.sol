@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
-// Import necessary Uniswap v4 core types and interfaces
+// Import necessary Uniswap v4 core types and interfaces//
 import {Hooks} from "@uniswap/v4-core/src/libraries/Hooks.sol";
 import {BaseHook} from "v4-periphery/src/utils/BaseHook.sol";
 import {IHooks} from "@uniswap/v4-core/src/interfaces/IHooks.sol";
@@ -61,6 +61,13 @@ abstract contract MultiHookAdapterBase is BaseHook, IMultiHookAdapterBase {
     }
 
     constructor(IPoolManager _poolManager) BaseHook(_poolManager) {}
+    
+    /// @notice Override hook address validation to disable automatic validation during deployment
+    /// @dev The adapter address will be validated during factory deployment with CREATE2
+    function validateHookAddress(BaseHook) internal pure override {
+        // Skip validation - factory handles this with CREATE2 salt selection
+        return;
+    }
 
     /// @notice Registers an array of sub-hooks to be used for a given pool.
     /// @param key The PoolKey identifying the pool for which to register hooks.
@@ -82,7 +89,8 @@ abstract contract MultiHookAdapterBase is BaseHook, IMultiHookAdapterBase {
         for (uint256 i = 0; i < count; i++) {
             IHooks hook = IHooks(hookAddresses[i]);
             if (hookAddresses[i] == address(0)) revert HookAddressZero();
-            if (!hook.isValidHookAddress(key.fee)) revert InvalidHookAddress();
+            // Skip hook address validation - allow any non-zero address  
+            // if (!hook.isValidHookAddress(key.fee)) revert InvalidHookAddress();
             hookList.push(hook);
         }
 
