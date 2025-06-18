@@ -167,7 +167,7 @@ contract MultiHookAdapterConcreteTest is Test, Deployers {
         address[] memory hooks = new address[](1);
         hooks[0] = address(0x1000);
         
-        vm.expectRevert(abi.encodeWithSelector(IMultiHookAdapterBaseV2.InvalidFee.selector, 1_000_001));
+        vm.expectRevert(abi.encodeWithSelector(IMultiHookAdapterBase.InvalidFee.selector, 1_000_001));
         adapter.registerHooksWithFullFeeConfig(
             poolKey,
             hooks,
