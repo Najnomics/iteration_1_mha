@@ -6,7 +6,7 @@ import {PoolKey} from "@uniswap/v4-core/src/types/PoolKey.sol";
 import {PoolId} from "@uniswap/v4-core/src/types/PoolId.sol";
 import {IHooks} from "@uniswap/v4-core/src/interfaces/IHooks.sol";
 import {Hooks} from "@uniswap/v4-core/src/libraries/Hooks.sol";
-import {MultiHookAdapterBaseV2} from "./base/MultiHookAdapterBaseV2.sol";
+import {MultiHookAdapterBase} from "./base/MultiHookAdapterBase.sol";
 import {IFeeCalculationStrategy} from "./interfaces/IFeeCalculationStrategy.sol";
 
 /// @title PermissionedMultiHookAdapter//
