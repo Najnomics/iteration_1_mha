@@ -71,7 +71,7 @@ contract PermissionedMultiHookAdapter is MultiHookAdapterBase {
         address _governance,
         address _hookManager,
         bool _hookManagementEnabled
-    ) MultiHookAdapterBaseV2(_poolManager, _defaultFee, _governance, true) {
+    ) MultiHookAdapterBase(_poolManager, _defaultFee, _governance, true) {
         hookManager = _hookManager;
         hookManagementEnabled = _hookManagementEnabled;
     }
