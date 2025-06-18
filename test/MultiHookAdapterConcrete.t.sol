@@ -10,7 +10,7 @@ import {Currency} from "@uniswap/v4-core/src/types/Currency.sol";
 import {Hooks} from "@uniswap/v4-core/src/libraries/Hooks.sol";
 import {IHooks} from "@uniswap/v4-core/src/interfaces/IHooks.sol";
 import {IFeeCalculationStrategy} from "../src/interfaces/IFeeCalculationStrategy.sol";
-import {IMultiHookAdapterBaseV2} from "../src/interfaces/IMultiHookAdapterBaseV2.sol";
+import {IMultiHookAdapterBase} from "../src/interfaces/IMultiHookAdapterBase.sol";
 import {Deployers} from "@uniswap/v4-core/test/utils/Deployers.sol";
 
 contract MultiHookAdapterConcreteTest is Test, Deployers {
