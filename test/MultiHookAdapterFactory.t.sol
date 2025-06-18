@@ -184,10 +184,10 @@ contract MultiHookAdapterFactoryTest is Test, Deployers {
     }
 
     function test_DeployToHookAddress_InvalidParameters() public {
-        vm.expectRevert(DeploymentLibrary.InvalidDeploymentParameters.selector);
+        vm.expectRevert(MultiHookAdapterFactory.InvalidParams.selector);
         factory.deployToHookAddress(IPoolManager(address(0)), DEFAULT_FEE, address(0x1234));
         
-        vm.expectRevert(DeploymentLibrary.InvalidDeploymentParameters.selector);
+        vm.expectRevert(MultiHookAdapterFactory.InvalidParams.selector);
         factory.deployToHookAddress(manager, 1_000_001, address(0x1234));
     }
 
