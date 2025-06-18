@@ -517,7 +517,7 @@ contract MultiHookAdapterV2Test is Test, Deployers {
     //////////////////////////////////
 
     function test_SetPoolFeeCalculationMethod_OnlyGovernance() public {
-        vm.expectRevert(IMultiHookAdapterBaseV2.UnauthorizedGovernance.selector);
+        vm.expectRevert(IMultiHookAdapterBase.UnauthorizedGovernance.selector);
         adapter.setPoolFeeCalculationMethod(poolId, IFeeCalculationStrategy.FeeCalculationMethod.MEAN);
 
         // Should work with governance
@@ -526,7 +526,7 @@ contract MultiHookAdapterV2Test is Test, Deployers {
     }
 
     function test_SetPoolSpecificFee_OnlyGovernance() public {
-        vm.expectRevert(IMultiHookAdapterBaseV2.UnauthorizedGovernance.selector);
+        vm.expectRevert(IMultiHookAdapterBase.UnauthorizedGovernance.selector);
         adapter.setPoolSpecificFee(poolId, 2500);
 
         // Should work with governance
@@ -535,7 +535,7 @@ contract MultiHookAdapterV2Test is Test, Deployers {
     }
 
     function test_SetGovernanceFee_OnlyGovernance() public {
-        vm.expectRevert(IMultiHookAdapterBaseV2.UnauthorizedGovernance.selector);
+        vm.expectRevert(IMultiHookAdapterBase.UnauthorizedGovernance.selector);
         adapter.setGovernanceFee(2500);
 
         // Should work with governance
