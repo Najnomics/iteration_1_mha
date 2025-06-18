@@ -76,12 +76,12 @@ contract MultiHookAdapterFactoryTest is Test, Deployers {
     }
 
     function test_DeployMultiHookAdapter_InvalidPoolManager() public {
-        vm.expectRevert(DeploymentLibrary.InvalidDeploymentParameters.selector);
+        vm.expectRevert(MultiHookAdapterFactory.InvalidParams.selector);
         factory.deployMultiHookAdapter(IPoolManager(address(0)), DEFAULT_FEE, SALT);
     }
 
     function test_DeployMultiHookAdapter_InvalidFee() public {
-        vm.expectRevert(DeploymentLibrary.InvalidDeploymentParameters.selector);
+        vm.expectRevert(MultiHookAdapterFactory.InvalidParams.selector);
         factory.deployMultiHookAdapter(manager, 1_000_001, SALT); // Too high
     }
 
@@ -127,28 +127,28 @@ contract MultiHookAdapterFactoryTest is Test, Deployers {
     }
 
     function test_DeployPermissionedMultiHookAdapter_InvalidPoolManager() public {
-        vm.expectRevert(DeploymentLibrary.InvalidDeploymentParameters.selector);
+        vm.expectRevert(MultiHookAdapterFactory.InvalidParams.selector);
         factory.deployPermissionedMultiHookAdapter(
             IPoolManager(address(0)), DEFAULT_FEE, GOVERNANCE, HOOK_MANAGER, true, SALT
         );
     }
 
     function test_DeployPermissionedMultiHookAdapter_InvalidFee() public {
-        vm.expectRevert(DeploymentLibrary.InvalidDeploymentParameters.selector);
+        vm.expectRevert(MultiHookAdapterFactory.InvalidParams.selector);
         factory.deployPermissionedMultiHookAdapter(
             manager, 1_000_001, GOVERNANCE, HOOK_MANAGER, true, SALT
         );
     }
 
     function test_DeployPermissionedMultiHookAdapter_InvalidGovernance() public {
-        vm.expectRevert(DeploymentLibrary.InvalidDeploymentParameters.selector);
+        vm.expectRevert(MultiHookAdapterFactory.InvalidParams.selector);
         factory.deployPermissionedMultiHookAdapter(
             manager, DEFAULT_FEE, address(0), HOOK_MANAGER, true, SALT
         );
     }
 
     function test_DeployPermissionedMultiHookAdapter_InvalidHookManager() public {
-        vm.expectRevert(DeploymentLibrary.InvalidDeploymentParameters.selector);
+        vm.expectRevert(MultiHookAdapterFactory.InvalidParams.selector);
         factory.deployPermissionedMultiHookAdapter(
             manager, DEFAULT_FEE, GOVERNANCE, address(0), true, SALT // Hook management enabled but no hook manager
         );
