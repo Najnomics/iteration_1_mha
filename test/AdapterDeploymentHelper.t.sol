@@ -201,7 +201,7 @@ contract AdapterDeploymentHelperTest is Test, Deployers {
         assertFalse(adapter == address(0), "Should deploy with empty initial hooks");
     }
 
-   /* function test_DeployPermissionedWithSetup_UnauthorizedCaller() public {
+    function test_DeployPermissionedWithSetup_UnauthorizedCaller() public {
         address[] memory initialHooks = new address[](1);
         initialHooks[0] = address(0x1000);
         
@@ -215,7 +215,7 @@ contract AdapterDeploymentHelperTest is Test, Deployers {
             initialHooks,
             SALT
         );
-    }*/
+    }
 
     //////////////////////////////////
     // Hook Permissions Tests       //

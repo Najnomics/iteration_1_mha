@@ -238,7 +238,7 @@ contract MultiHookAdapterFactoryTest is Test, Deployers {
         factory.deployMultiHookAdapter(manager, DEFAULT_FEE, SALT);
     }
 
-   /* function test_DifferentCallersCanUseSameSalt() public {
+    function test_DifferentCallersCanUseSameSalt() public {
         // First caller deploys
         address adapter1 = factory.deployMultiHookAdapter(manager, DEFAULT_FEE, SALT);
         
@@ -249,7 +249,7 @@ contract MultiHookAdapterFactoryTest is Test, Deployers {
         // Should be different addresses since factory is the same but deployment context differs
         // Actually, they should be the same since CREATE2 uses factory address, salt, and bytecode
         assertEq(adapter1, adapter2, "Same factory + salt + bytecode = same address");
-    }*/
+    }
 
     function test_EdgeCase_ZeroFee() public {
         address adapter = factory.deployMultiHookAdapter(manager, 0, SALT);
