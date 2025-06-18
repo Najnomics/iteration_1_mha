@@ -87,6 +87,9 @@ contract AdapterDeploymentHelper {
         address[] calldata, /* initialApprovedHooks - unused, kept for interface compatibility */
         bytes32 salt
     ) external returns (address adapter) {
+        // Only the hook manager can deploy with this setup
+        require(msg.sender == hookManager, "Only hook manager can deploy");
+        
         // Deploy the permissioned adapter
         adapter = factory.deployPermissionedMultiHookAdapter(
             poolManager,
