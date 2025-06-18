@@ -11,7 +11,7 @@ import {BeforeSwapDelta} from "@uniswap/v4-core/src/types/BeforeSwapDelta.sol";
 import {IFeeCalculationStrategy} from "../../src/interfaces/IFeeCalculationStrategy.sol";
 
 /// @title TestMultiHookAdapterV2//
-/// @notice Test implementation of MultiHookAdapterBaseV2 for testing
+/// @notice Test implementation of MultiHookAdapterBase for testing
 contract TestMultiHookAdapterV2 is MultiHookAdapterBase {
     using PoolIdLibrary for PoolKey;
 
