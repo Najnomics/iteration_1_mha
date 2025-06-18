@@ -578,11 +578,11 @@ contract MultiHookAdapterV2Test is Test, Deployers {
 
     function test_InvalidFee_Reverts() public {
         vm.prank(GOVERNANCE);
-        vm.expectRevert(abi.encodeWithSelector(IMultiHookAdapterBaseV2.InvalidFee.selector, 1000001));
+        vm.expectRevert(abi.encodeWithSelector(IMultiHookAdapterBase.InvalidFee.selector, 1000001));
         adapter.setGovernanceFee(1000001); // Too high
 
         vm.prank(GOVERNANCE);
-        vm.expectRevert(abi.encodeWithSelector(IMultiHookAdapterBaseV2.InvalidFee.selector, 1000001));
+        vm.expectRevert(abi.encodeWithSelector(IMultiHookAdapterBase.InvalidFee.selector, 1000001));
         adapter.setPoolSpecificFee(poolId, 1000001); // Too high
     }
 
