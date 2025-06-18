@@ -20,7 +20,7 @@ contract TestMultiHookAdapterV2 is MultiHookAdapterBase {
         uint24 _defaultFee,
         address _governance,
         bool _governanceEnabled
-    ) MultiHookAdapterBaseV2(_poolManager, _defaultFee, _governance, _governanceEnabled) {}
+    ) MultiHookAdapterBase(_poolManager, _defaultFee, _governance, _governanceEnabled) {}
 
     /// @notice Expose the internal mapping for testing purposes
     /// @param poolId The pool ID to get hooks for
