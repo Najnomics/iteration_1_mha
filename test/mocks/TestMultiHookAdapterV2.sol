@@ -12,7 +12,7 @@ import {IFeeCalculationStrategy} from "../../src/interfaces/IFeeCalculationStrat
 
 /// @title TestMultiHookAdapterV2//
 /// @notice Test implementation of MultiHookAdapterBaseV2 for testing
-contract TestMultiHookAdapterV2 is MultiHookAdapterBaseV2 {
+contract TestMultiHookAdapterV2 is MultiHookAdapterBase {
     using PoolIdLibrary for PoolKey;
 
     constructor(
