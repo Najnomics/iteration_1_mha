@@ -12,7 +12,7 @@ import {IFeeCalculationStrategy} from "./interfaces/IFeeCalculationStrategy.sol"
 /// @title PermissionedMultiHookAdapter//
 /// @notice Permissioned implementation allowing governance to manage hooks and fee configurations
 /// @dev Hooks can be added/removed by approved addresses. Fee configurations can be updated by governance.
-contract PermissionedMultiHookAdapter is MultiHookAdapterBaseV2 {
+contract PermissionedMultiHookAdapter is MultiHookAdapterBase {
     
     /// @notice Error thrown when hook is not in approved registry
     error HookNotApproved(address hook);
