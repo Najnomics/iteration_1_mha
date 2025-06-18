@@ -17,7 +17,7 @@ import {BalanceDelta} from "@uniswap/v4-core/src/types/BalanceDelta.sol";
 contract TestMultiHookAdapter is MultiHookAdapterBase {
     using PoolIdLibrary for PoolKey;
 
-    constructor(IPoolManager _poolManager) MultiHookAdapterBase(_poolManager) {}
+    constructor(IPoolManager _poolManager) MultiHookAdapterBase(_poolManager, 3000, address(0), false) {}
 
     /// @notice Implement registerHooks to make this class concrete
     /// @param key The PoolKey identifying the pool for which to register hooks
