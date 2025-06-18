@@ -5,6 +5,7 @@ A flexible adapter pattern enabling multiple hooks to operate simultaneously on 
 ## Challenge
 
 Uniswap V4's architecture restricts each liquidity pool to a single hook contract, limiting the composability of pool behaviors. This constraint forces developers to build complex, monolithic hook contracts when multiple functionalities are needed for a single pool, or to deploy separate pools for different features, fragmenting liquidity.
+---------
 
 Common use cases requiring composition:
 - Dynamic fee strategies with additional features like TWAMM operations
