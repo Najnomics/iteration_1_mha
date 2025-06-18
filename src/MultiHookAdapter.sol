@@ -25,7 +25,7 @@ contract MultiHookAdapter is MultiHookAdapterBase {
     constructor(
         IPoolManager _poolManager,
         uint24 _defaultFee
-    ) MultiHookAdapterBaseV2(_poolManager, _defaultFee, address(0), false) {
+    ) MultiHookAdapterBase(_poolManager, _defaultFee, address(0), false) {
         // Governance is disabled for immutable version
     }
 
