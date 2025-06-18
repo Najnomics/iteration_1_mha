@@ -11,7 +11,7 @@ import {IFeeCalculationStrategy} from "./interfaces/IFeeCalculationStrategy.sol"
 /// @title MultiHookAdapter//
 /// @notice Immutable implementation of MultiHookAdapterBase with fixed hook sets and fee strategies
 /// @dev Once hooks are registered for a pool, they cannot be changed. Fee configuration is immutable.
-contract MultiHookAdapter is MultiHookAdapterBaseV2 {
+contract MultiHookAdapter is MultiHookAdapterBase {
     
     /// @notice Error thrown when trying to modify hooks after they have been set
     error HooksAlreadyRegistered(PoolId poolId);
