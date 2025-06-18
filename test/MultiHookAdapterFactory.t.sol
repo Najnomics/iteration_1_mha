@@ -3,6 +3,7 @@ pragma solidity ^0.8.24;
 
 import {Test} from "forge-std/Test.sol";
 import {DeploymentLibrary} from "../src/factory/DeploymentLibrary.sol";
+import {MultiHookAdapterFactory} from "../src/factory/MultiHookAdapterFactory.sol";
 import {MultiHookAdapter} from "../src/MultiHookAdapter.sol";
 import {PermissionedMultiHookAdapter} from "../src/PermissionedMultiHookAdapter.sol";
 import {IPoolManager} from "@uniswap/v4-core/src/interfaces/IPoolManager.sol";
