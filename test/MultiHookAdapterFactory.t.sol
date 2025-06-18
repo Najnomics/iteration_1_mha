@@ -242,13 +242,17 @@ contract MultiHookAdapterFactoryTest is Test, Deployers {
         // First caller deploys
         address adapter1 = factory.deployMultiHookAdapter(manager, DEFAULT_FEE, SALT);
         
-        // Different caller (but same salt) can deploy because CREATE2 includes factory address
+        // Different caller (but same salt) should fail because CREATE2 address collision
         vm.prank(address(0x9999));
-        address adapter2 = factory.deployMultiHookAdapter(manager, DEFAULT_FEE, SALT);
+        vm.expectRevert();
+        factory.deployMultiHookAdapter(manager, DEFAULT_FEE, SALT);
         
-        // Should be different addresses since factory is the same but deployment context differs
-        // Actually, they should be the same since CREATE2 uses factory address, salt, and bytecode
-        assertEq(adapter1, adapter2, "Same factory + salt + bytecode = same address");
+        // Use different salt to succeed
+        vm.prank(address(0x9999));
+        address adapter2 = factory.deployMultiHookAdapter(manager, DEFAULT_FEE, bytes32(uint256(SALT) + 1));
+        
+        // Should be different addresses since different salts
+        assertFalse(adapter1 == adapter2, "Different salts should produce different addresses");
     }
 
     function test_EdgeCase_ZeroFee() public {
